@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
   tasks: [],
-  counter: -1,
 };
 
 let inputSLice = createSlice({
@@ -12,11 +11,9 @@ let inputSLice = createSlice({
     addTask: (state: any, action) => {
       if (action.payload.length > 0) {
         state.tasks.push(action.payload);
-        ++state.counter;
       }
     },
     removeTask: (state: any, action) => {
-      --state.counter;
       state.tasks = state.tasks.filter((e) => {
         return e !== action.payload;
       });

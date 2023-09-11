@@ -1,11 +1,10 @@
 import "./todo.css";
 // ! redux
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { removeTask, editTask } from "../Input/inputSlice";
 // hooks
 import { useRef, useId } from "react";
 export default function Todo(props) {
-  let counter = useSelector((state: any) => state.inputTasks.counter);
   //
   let dispatch = useDispatch();
   //
@@ -14,7 +13,7 @@ export default function Todo(props) {
   return (
     <>
       <div
-        className={`todo task-${counter} capitalize my-4 h-[5rem] text-[2rem]  flex justify-between px-4 rounded-xl items-center`}
+        className={`todo capitalize my-4 h-[5rem] text-[2rem]  flex justify-between px-4 rounded-xl items-center`}
       >
         <p ref={taskRef} id={taskId} className="font-semibold">
           {props.children}
