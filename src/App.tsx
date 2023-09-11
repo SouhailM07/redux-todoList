@@ -5,7 +5,7 @@ import { Input } from "./components";
 function App() {
   return (
     <>
-      <div>
+      <div className="border-red-500 border-4 flex flex-col items-center h-screen">
         <Input />
       </div>
     </>
