@@ -11,8 +11,13 @@ let inputSLice = createSlice({
     addTask: (state: any, action) => {
       state.tasks.push(action.payload);
     },
+    removeTask: (state: any, action) => {
+      state.tasks = state.tasks.filter((e) => {
+        return e !== action.payload;
+      });
+    },
   },
 });
 
-export let { addTask } = inputSLice.actions;
+export let { addTask, removeTask } = inputSLice.actions;
 export default inputSLice.reducer;
