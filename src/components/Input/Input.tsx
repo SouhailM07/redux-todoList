@@ -4,7 +4,6 @@ export default function Input() {
     <div className="border border-yellow-400 text-[2rem]">
       <input
         type="text"
-        id=""
         value="hello world"
         className="pl-8 border-2 border-black outline-none h-[4.5rem] w-[40rem] "
       />
