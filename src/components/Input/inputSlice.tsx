@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
   tasks: [],
+  counter: -1,
 };
 
 let inputSLice = createSlice({
@@ -9,15 +10,24 @@ let inputSLice = createSlice({
   initialState,
   reducers: {
     addTask: (state: any, action) => {
-      state.tasks.push(action.payload);
+      if (action.payload.length > 0) {
+        state.tasks.push(action.payload);
+        ++state.counter;
+      }
     },
     removeTask: (state: any, action) => {
+      --state.counter;
       state.tasks = state.tasks.filter((e) => {
         return e !== action.payload;
       });
     },
+    editTask: (state: any, action) => {
+      let editedTask = prompt("edit your task here");
+      let task: any = document.getElementById(action.payload);
+      state.tasks.splice(state.tasks.indexOf(task.textContent), 1, editedTask);
+    },
   },
 });
 
-export let { addTask, removeTask } = inputSLice.actions;
+export let { addTask, removeTask, editTask } = inputSLice.actions;
 export default inputSLice.reducer;

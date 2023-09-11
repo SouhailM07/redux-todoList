@@ -6,10 +6,10 @@ function App() {
   return (
     <>
       <div className=" flex flex-col items-center h-[auto] w-[60rem] m-auto">
-        <h1 className="mb-4 text-white bg-gray-700 rounded-xl w-full grid place-items-center text-[2rem] font-bold">
+        <h1 className="mt-2 mb-4 text-white bg-gray-700 rounded-xl w-full grid place-items-center text-[2rem] font-bold">
           Todo List Project
         </h1>
-        <div className="w-[100%] h-[80vh] overflow-auto ">
+        <div className="w-[100%] h-[78.5vh] overflow-auto ">
           <TodoList />
         </div>
         <Input />
